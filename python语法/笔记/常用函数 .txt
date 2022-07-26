@@ -1,0 +1,36 @@
+a,x = input().split(',')输入两个值，用逗号分隔
+pow(x,y[z])        计算x的y次幂,再对z求余  
+round(x,d)         对x取d位数 ，四舍五入  
+abs(x)             求绝对值  
+divmod(x,y)        同时求//和%
+complex(x,y)       生成复数 
+int(x)             转换成整数                  
+float(x)           转换成浮点数 
+str()              变成字符串形式
+eval()             字符串形式变为数字形式
+chr()              Unicode编码变字符
+ord()              字符变Unicode编码
+
+
+map(f,x)           将f函数作用于x的每一个元素,返回Iterator类型
+reduce(f,x1,x2,x3) 返回f(f(x1,x2),x3)
+filter(f,x)        将f函数作用于x每一个元素，根据返回值True还是Flase决定保留还是舍去
+sort(x,keys=f,reverse=True)将x的元素执行f函数以后排序
+@functools.wraps(func)固定住函数名
+functools.partial(f,参数)固定f的默认参数
+
+isinstance(x,y)    判断x是否是y类型
+type(x)            获得x的类型
+iter(x)            转换Iterator类型
+dir(x)             获得x的所以属性及方法
+hasattr(x,y)       判断x是否有y属性或方法
+setattr(x,y,z)     给x设置一个y属性或方法，值为z
+getattr(x,y,default)获得x的y属性值，可设置d参数不存在则返回d
+
+__slots__ = (x,y)  定义允许绑定的属性名称
+__str__()          打印想要输出的实例
+__repr__()         令__str__=__repr__
+__iter__()         返回一个迭代对象
+__getitem__()      访问任意一项
+__getattr__()      动态返回属性
+__call__()         直接调用实例

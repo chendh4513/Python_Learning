@@ -1,0 +1,60 @@
+str.split(x)       遇x则分割并输出列表 
+str.replace(x,y)   将x替换为y
+str.center(x,y)    长度为x，字符串居中，剩余部分用y填充  
+str.join(x)        在x中每个元素后面都添加一个str,输出成字符
+str.title()        首字母大写
+str.upper()        全部大写 
+str.lower()        全部小写
+str.strip(x)       从左右同时开始去除x，直到没有x
+str.lstrip(x)      去除开头x
+str.rstrip(x)      去除末端x
+str.startswith(x)  判断str是否以x开始
+str.endswith(x)    潘丹str是否以x结束
+
+S.add(x)           向集合中添加元素  
+S.clear()          清空集合元素
+S.pop()            随机返回集合中一个元素，为空则异常退出
+S.discard(x)       在集合中移除元素,无不报错   
+S.remove(x)        在集合中移除元素,无则报错
+
+len(s或S或字典)     返回序列长度或集合元素个数
+max(s),min(s)      分别返回序列最大最小值
+s.count(x)         返回序列中x出现次数 
+s.index(s,i,j)     返回序列从i到j中第一次出现x的位置
+
+del ls[i]或ls[i:j:k]删除
+lt=ls[i:j:k]       对ls切片生成新的列表
+ls+=lt             将lt列表增加带ls中
+ls.append(x)       列表最后增加一个元素 
+ls.clear()         清空列表元素      
+ls.copy()          复制列表
+ls.insert(i,x)     在i位置增加x       
+ls.pop(i)          取出i位置的元素，无参数则默认最后一个
+ls.remove(x)       将列表中出现的第一个x删除
+ls.reverse()       将列表反转 
+ls.sort()          永久排序
+ls.sorted()        临时排序
+ls[i]=x            i位置替换为x
+
+zip(a,b)           将长度相等的两个列表变成键值对
+del d[k]           删除键k对应的数据值
+d.keys()           返回所有键
+d.values()         返回所有值
+d.items()          返回所有键值对
+d.get(k,<default>) 键k存在则返回值，不存在则返回<default>
+d.pop(k,<default>) 键k取出则返回值，不存在则返回<default>
+d.popitem()        随机取出一个键值对，以元组形式返回
+d.clear()          清空
+
+f.read(x)          读取前x个的字符，无参数则读取全部
+f.readline(x)      读取当前行前x个的字符，无参数则读取当前行
+f.readlines(x)     读取前x行，无参数则读取全部行（输出列表，每一行一个元素）    
+f.write(s)         向文件写入字符串
+f.writelines(ls)   将一个元素全为字符串的列表写入文件（每个元素紧连）
+f.seek(0/1/2)      0回到开头，1当前位置，2前往结尾
+
+set()              转换成集合
+tuple()            转换成元组
+
+
+

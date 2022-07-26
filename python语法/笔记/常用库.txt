@@ -1,0 +1,73 @@
+turtl库：
+setup()                设置画布属性
+penup/pendown()        抬起/放下画笔
+pensize()              设置画笔宽度
+pencolor(R,G,B)        设置画笔颜色
+fillcolor(R,G,B)            
+begin_fill()
+end_fill()             填充颜色
+goto(x,y)              前往坐标
+fd(x)                  当前方向前进
+circle(r，angle)       画弧线        
+seth(angle)            设置绝对角度
+left/right()           画笔左/右转           
+
+time库：
+time()                 获取时间戳
+ctime()                获取当前时间（可读）
+gmtime()               获取当前时间（不可读）
+strftime(tpl，t)       时间格式化输出(%Y-%m-%d %H:%M:%S,gmtime())
+strptime(t,tpl)        与上一个相反
+perf_counter()         计时，调用两次相减
+sleep(s)               休眠
+
+random库：
+seed(x)                种子为x
+random()               根据种子产生随机小数
+randint(x,y)           x-y内的随机整数
+randrange(x,y,z)       x-y内步长为z的随机整数
+uniform(x,y)           x-y内的随机小数
+getrandbits(x)         长为x比特的随机整数
+choice(s)              s列表内的的随机数
+shuffle(s)             打乱列表
+
+pyinstaller库：
+-h                     帮助
+--clean                清理临时文件              
+-D                     生成dist文件夹（不推荐使用）
+-i 图标.ico -F 文件名.py  将文件生成程序并且指定图标
+
+jieba库：
+lcut(s)                  精确分隔，输出列表
+lcut(s,cut_all=True)     全分隔，输出列表
+lcut_for_search(s)       先精确分隔，再分割
+add_word(w)              向词库增加单词
+
+wordcloud()库：
+w=world.WordCloud()      参数：宽width 高height 最大/最小字体max/min_font_size 字体大小间隔font_step 字体路径font_path 最大单词数max_words 排除单词stop_words 背景色background_color 
+w.generate(txt)          加载文本
+w.to_file()              输出为图像
+
+os.path库：
+abspath(path)            返回绝对路径
+normpath(path)           统一用\\分割路径
+relpath(path)            返回相对路径
+dirname(path)            返回目录名称
+basename(path)           返回文件名称
+join(path,*paths)        组合path和paths，产生路径名称
+exists(path)             判断是否存在
+isfile(path)             判断文件是否存在
+isdir(path)              判断路径是否存在
+getatime(path)           返回上次访问时间
+getmtime(path)           返回上次修改时间
+getctime(path)           返回创建时间
+getsize(path)            返回文件大小
+
+os库：     
+system(程序或命令 参数)  调用程序
+chdir(path)              修改程序操作路径
+getxwd()                 返回当前路径
+getlogin()               获得当前系统登录用户名称
+cpu_count()              获得CPU数量
+urandom(n)               产生n字节的字符串      
+
