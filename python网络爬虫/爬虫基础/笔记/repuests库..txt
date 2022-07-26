@@ -1,0 +1,81 @@
+# response对象的操作：
+# r.url/header                    返回完整url和头信息
+# r.status_code                   返回200则成功，返回404则失败
+# r.text                          返回页面内容(解码以后的字符串，可能产生乱码)
+# r.content                       返回页面内容(直接从网络上爬取的bytes类型)
+# r.json()                        将json转换为地点
+# r.encoding                      猜测编码方式
+# r.apparent_encoding             从内容分析编码
+# r.raise_for_status()            如果不返回200，产生异常
+# r.cookies                       获取cookies信息
+#
+# request方法：
+# requests.get(url,参数）         获得网页内容
+#     params,将查询参数添加到url里
+#     headers,定制请求头
+#     proxies,提交代理ip
+#     cookies,提交cookies参数
+#     timeout,设置超时时间
+#
+# requests.post(url,参数)         提交参数
+#     data，填写表单内容
+#     headers,定制请求头
+#     proxies,提交代理ip
+#     timeout,设置超时时间
+#     files,提交文件
+#     json,将数据提交到对应位置
+
+
+
+# # 用post爬取拉勾网职位信息
+# import requests
+# data = {
+#     'first':"true",
+#     'pn':"1",
+#     'kd':"python"
+# }
+# headers = {
+#     'referer': "https://www.lagou.com/jobs/list_python?labelWords=&fromSearch=true&suginput=",
+#     'user-agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.92 Safari/537.36",
+#     'cookie': "user_trace_token=20200430211029-051743c4-4b51-4457-bccd-bcb5ee30c6fd; LGUID=20200430211029-2dae8ee8-7277-4e8b-b7a7-96013d95c6db; _ga=GA1.2.59054520.1588252230; _gid=GA1.2.1928214862.1588252230; index_location_city=%E5%85%A8%E5%9B%BD; sensorsdata2015jssdkcross=%7B%22distinct_id%22%3A%22171cb35dbbe260-0b16b09b28d74-87f133f-1327104-171cb35dbc0a94%22%2C%22%24device_id%22%3A%22171cb35dbbe260-0b16b09b28d74-87f133f-1327104-171cb35dbc0a94%22%7D; JSESSIONID=ABAAABAABAGABFA09C329EA547E3E40D93ACE681C1C510C; WEBTJ-ID=20200501212653-171d06b21162f6-0c2bc8f935f345-87f133f-1327104-171d06b21179c6; X_HTTP_TOKEN=a1c19ef70114fa54316933885193587dde12a22c0d; PRE_UTM=; PRE_HOST=; PRE_LAND=https%3A%2F%2Fwww.lagou.com%2F; LGSID=20200501212653-726b3edb-8c39-4f57-9da1-a1e41892661c; PRE_SITE=https%3A%2F%2Fwww.lagou.com; Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1588252230,1588339614; _gat=1; TG-TRACK-CODE=index_search; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1588339618; LGRID=20200501212657-7b9c250f-5e66-4419-a936-dc4460468393; SEARCH_ID=3c29ac18e10c4ee087ff35cab05ca4f1"
+# }
+# url = "https://www.lagou.com/jobs/positionAjax.json?needAddtionalResult=false"
+# res = requests.post(url,data=data,headers=headers)
+# print(res.text)
+
+# # 使用代理
+# import requests
+# proxy = {
+#     'http':"125.108.127.177:9000"
+# }
+#
+# res = requests.get("http://httpbin.org/ip",proxies=proxy)
+# print(res.content)
+
+# # 使用cookies自动登录人人网
+# import requests
+# login_in_url = "http://www.renren.com/SysHome.do"
+# dapeng_url = "http://www.renren.com/880151247/profile"
+# headers = {
+# 'user-agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.92 Safari/537.36"
+# }
+# data = {
+#     'email':"1643710564@qq.com",
+#     'password':"chendonghao1105"
+# }
+# session = requests.Session()# 追踪cookies信息
+# session.post(login_in_url,data=data,headers=headers)
+# res = requests.get(dapeng_url)
+# with open('renren.html','w',encoding="utf-8") as fp:
+#     fp.write(res.text)
+# print(res.text)
+
+
+
+
+
+
+
+
+
+                      

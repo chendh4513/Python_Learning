@@ -1,0 +1,88 @@
+# request模块
+# request = request.Request(url,header)
+# response = request.urlopen(resquest)          获取网页信息
+# request.urlretrieve(url,path)                 下载网页文件
+#
+# parse模块
+# data = parse.urlencode(values)
+# values = parse.parse_qs(data)                 值变成列表
+# parse.urlparse(url)
+# parse.urlsplit(url)                           将url分割
+
+
+
+# 代理设置
+# from urllib import request
+# url = "http://httpbin.org"
+# handler = request.ProxyHandler({"http":"218.66.161.88:32769"})
+# opener = request.build_opener(handler)
+# req = request.Request(url)
+# res = opener.open(req)
+# print(res.read())
+
+
+# # 登录人人网时抓包cookies信息并登录
+# from urllib import request
+# url = "http://www.renren.com/880151247/profile"
+# headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)"
+#                          " Chrome/81.0.4044.92 Safari/537.36",
+#            "Cookie": "anonymid=k9nipn55-dasy03; depovince=GW; _r01_=1; taihe_bi_sdk_uid=4805ecca7dad708f29ab9b50c0261b51; taihe_bi_sdk_session=fcacd20107535e2666c4f4a68dd559bc; ick_login=33a757e3-a256-4b3c-806c-15840b192449;"
+#                      " t=8c4c70828d19f2dcd321cf7ed334638a5; societyguester=8c4c70828d19f2dcd321cf7ed334638a5; id=974341925; xnsid=32122aa6; jebecookies=e93598e9-c229-4223-bcbd-43422a996724|||||; JSESSIONID=abcD5vdebhrJWd3uD7nhx; ver=7.0; loginfrom=null; jebe_key=749173e6-2db3-4a57-95fc-5e62e92fedd7%7Ce82ad9c6f53f37a0d7a96dbbcf8ae31c%7C1588297852527%7C1%7C1588297853035; jebe_key=749173e6-2db3-4a57-95fc-5e62e92fedd7%7Ce82ad9c6f53f37a0d7a96dbbcf8ae31c%7C1588297852527%7C1%7C1588297853037; wp_fold=0"}
+# req = request.Request(url,headers = headers)
+# res = request.urlopen(req)
+# # print(res.read().decode('utf-8'))
+# with open('renren.html','w',encoding = 'utf-8') as fp:
+#     fp.write(res.read().decode('utf-8'))
+#     fp.close()
+
+
+# # 使用cookies自动化登录人人网
+# from urllib import request,parse
+# from http.cookiejar import CookieJar
+# headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)"
+#                         " Chrome/81.0.4044.92 Safari/537.36"}
+#
+# def get_opener():#获取opener
+#     cookiejar = CookieJar()
+#     handler = request.HTTPCookieProcessor(cookiejar)
+#     opener = request.build_opener(handler)
+#     return opener
+#
+# def login_opener(opener):# 登录时从登录页面找到cookies信息
+#     data = {"email":"13914366295","password":"chendonghao1105"}
+#     data = parse.urlencode(data).encode("utf-8")
+#     login_url = "http://www.renren.com/SysHome.do"
+#     req = request.Request(login_url,data = data, headers = headers,method = "GET")
+#     opener.open(req)
+#
+# def visit_profile(opener):# 用cookies信息自动登录直接访问
+#     dapeng_url = "http://www.renren.com/880151247/profile"
+#     req = request.Request(dapeng_url,method = "GET")
+#     res = opener.open(req)
+#     with open('renren1.html','w',encoding = 'utf-8') as fp:
+#         fp.write(res.read().decode('utf-8'))
+#
+# if __name__ == '__main__':# 执行
+#     opener = get_opener()
+#     login_opener(opener)
+#     visit_profile(opener)
+
+
+# # 保存cookies信息
+# from urllib import request
+# from http.cookiejar import MozillaCookieJar
+# cookiejar = MozillaCookieJar('cookie.txt')
+# handler = request.HTTPCookieProcessor(cookiejar)
+# opener = request.build_opener(handler)
+# res = opener.open('http://httpbin.org/cookies/set?course=abc')
+# #保存到本地
+# cookiejar.save(ignore_discard=True)
+# #加载本地cookies信息
+# cookiejar.load(ignore_discard=True)
+# for cookie in cookiejar:
+#     print(cookie)
+
+
+
+
+

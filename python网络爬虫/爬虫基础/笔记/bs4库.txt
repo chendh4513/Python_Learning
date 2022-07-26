@@ -1,0 +1,43 @@
+from bs4 import BeautifulSoup
+soup=BeatifulSoup(文档内容，解析器）
+.string                     当前标签的非标签字符串,只能单行
+.strings                    标签下的子孙非标签字符串，迭代类型返回
+.stripped_strings           标签下的子孙非标签字符串，去掉空白字符串，迭代类型返回
+.get_text()                 标签下的子孙非标签字符串，str形式返回
+
+
+查找：
+.find_all(参数）
+    tag           标签名称
+    attrs         标签属性
+    keywords      关键字参数
+    text          文本
+    limit         返回的个数
+
+.find()                在标签中搜索，返回一个结果，输出字符串
+.find_parents()        在先辈标签中搜索，返回列表
+.find_parent()         在先辈标签中搜索，返回一个结果，输出字符串
+.find_next_siblings()  在后续平行标签中搜索，返回列表  
+.find_next_sibling()   在后续平行标签中搜索，返回一个结果，输出字符串
+.find_previous_siblings()在前序平行标签中搜索，返回列表
+.find_previous_sibling()在前序平行标签中搜索，返回一个结果，输出字符串
+
+遍历：
+下行：
+.contents          返回标签的子标签，包括字符串，返回列表
+.children          迭代类型，遍历子标签       
+.descendants       迭代类型，遍历子孙标签
+上行：
+.parent            返回标签的父标签，返回列表
+.parents           迭代类型，遍历先辈标签
+平行：
+.next_sibling      返回下一个同级标签 
+.next_siblings     迭代类型，遍历后续所有同级标签  
+.previous_sibling  返回上一个同级标签
+.previous_siblings 迭代类型，遍历前面所有同级标签
+
+.prettify()         增加换行符输出
+
+
+
+

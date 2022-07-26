@@ -1,0 +1,28 @@
+最开始要在setting.py中定义以下几项
+ROBOTSTXT_OBEY = False
+DEFAULT_REQUEST_HEADERS = {
+  'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'Accept-Language': 'en',
+  'User-Agent':"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36"
+}
+ITEM_PIPELINES = {
+   'qiushibaike.pipelines.QiushibaikePipeline': 300,
+}
+
+response      可以用css和xpath语法处理
+get()         获取当前selector里第一个文本
+getall()      获取当前selector里所有文本
+yield         传给pipeline处理
+数据最好在item.py里定义好模型
+
+另一种存入json文件的方式
+from scrapy.exporters import JsonItemExporter
+self.exporter = JsonItemExporter(self.fp,ensure_ascii=False,encoding="utf-8")
+self.exporter.start_exporting()
+self.exporter.export_item(item)
+self.exporter.finish_exporting()
+
+第三种(数据量较大时使用)
+from scrapy.exporters import JsonLinesItemExporter
+self.exporter = JsonLinesItemExporter(self.fp,ensure_ascii=False,encoding="utf-8")
+self.exporter.export_item(item)

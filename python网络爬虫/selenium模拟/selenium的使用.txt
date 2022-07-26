@@ -1,0 +1,62 @@
+# from selenium import webdriver
+# options = webdriver.ChromeOptions()# 建立代理对象
+# options.add_argument("--proxy-server=http://ip:端口号")
+# driver_path = "E:\Google\Chrome\Application\chromedriver.exe"
+# driver = webdriver.Chrome(executable_path=driver_path,chrome_options=options)
+# driver.get(url)                             获取网页
+# driver.page_sourse                          获取网页源代码
+# driver.current_url                          获取当前网址
+# driver.save_screeenshot(文件名)             保存网页截图
+# driver.close()                              关闭网页
+# driver.quit()                               关闭浏览器
+# driver.find_element_by_id()                 根据id查找
+# Tag.get_attribute()                         获取值
+# driver.find_element_by_class_name()         根据类名查找
+# driver.find_element_by_name()               根据name的属性值查找
+# driver.find_element_by_tag_name()           根据标签名查找
+# driver.find_element_by_xpath()              使用xpath语法查找
+# driver.find_element_by_css_selector()       使用css选择器查找
+# inputTag.send_keys()                        文本框里提交关键词
+# driver.execute_script("arguments[0].click();",botton) 执行点击操作
+# Tag.click()                                 执行点击操作
+# from selenium.webdriver.support.ui import Select
+# selectTag = Select()
+# selectTag.select_by_index()                   根据位置选中
+# selectTag.select_by_value()                   根据值选中
+# selectTag.select_by_visible_text()            根据可见文本选中
+# driver.get_cookies()                          获取所有cookies信息
+# driver.get_cookie()                           根据键获取cookie信息
+# driver.delete_cookie()                        根据键删除cookie信息
+# driver.delete_all_cookies()                   删除所有cookie信息
+# driver.implicitly_wait(time)                  获取不到元素时，等待一段时间
+# from selenium.webdriver.support.ui import WebDriverWait
+# from selenium.webdriver.support import expected_conditions as EC
+# from selenium.webdriver.common.by import By
+# WebDriverWait(driver,time).until(
+# EC.presence_of_all_elements_located(By.ID,id)       获取元素，直到获取到停止，若获取不到则等待
+# EC.url_to_be(url)                                           获取界面，当url变为新url是停止，否则等待
+# EC.text_to_be_present_in_element_value((By.ID,id),text)     判断元素中的文本，若不同则等待
+# EC.element_to_be_clickable(By.ID,id)                               判断按钮是否可以点击，若不行则等待
+# driver.execute_script("window.open('%s')"%url) 打开第二个网页
+# driver.switch_to.window(driver.window_handles[index]) 在代码中切换页面
+
+# # 行为链
+# from selenium import webdriver
+# from selenium.webdriver.common.action_chains import ActionChains
+# driver_path = "E:\Google\Chrome\Application\chromedriver.exe"
+# driver = webdriver.Chrome(executable_path=driver_path)
+# driver.get('https://wwww.baidu.com/')
+# inputTag = driver.find_element_by_id('kw')
+# submitBtn = driver.find_element_by_id('su')
+# actions =   ActionChains(driver)
+# actions.move_to_element(inputTag)
+# actions.send_keys_to_element(inputTag,'python')
+# actions.move_to_element(submitBtn)
+# actions.click(submitBtn)
+# actions.perform()
+
+
+
+
+
+

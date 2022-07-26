@@ -1,0 +1,16 @@
+//book                            选取全局下所有book标签
+./book                            二次提取时，选取当前标签下的子book标签
+.//book                           二次提取时，选取当前标签下的子孙book标签
+/book/book1                       选取book节点下所有book1标签
+/book[@price]                     选取所有拥有price属性的book标签
+/bookstore/book[1]                选取bookstore标签下的第一个book标签
+/bookstore/book[last()]           选取bookstore标签下的最后一个book标签
+/bookstore/book[position()<3]     选取bookstore标签下的前两个book标签
+/book[contains(@price,x)]         选取所有price属性包含x值的book标签
+/book[@price=10]                  选取所有price属性等于10的book标签
+/book/*                           选取book节点下所有子标签
+/book[@*]                         选取所有有属性的book标签
+/book/@attrs                      获取book标签的attrs值 
+/book/text()                      获取book标签下所有文本
+book.get(attrs}                   获取book的attrs属性
+以上返回的都是列表

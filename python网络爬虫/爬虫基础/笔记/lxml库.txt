@@ -1,0 +1,44 @@
+
+# # 用lxml解析字符串和文件
+# from lxml import etree
+# text = '''
+# <div class="lg_tbar_l">
+#             <a href="https://www.lagou.com/" class="logo"></a>
+#             <ul class="lg_tbar_tabs">
+#                                 <li >
+#                     <a href="https://www.lagou.com/" data-lg-tj-id="5i00"
+#                         data-lg-tj-no="idnull" data-lg-tj-cid="idnull">首页</a>
+#                 </li>
+#                 <li >
+#                     <a href="https://www.lagou.com/gongsi/" data-lg-tj-id="5j00"
+#                         data-lg-tj-no="idnull" data-lg-tj-cid="idnull" data-lg-tj-track-code="index_company">公司</a>
+#                 </li>
+#                 <li>
+#                     <a rel="nofollow" href="https://xiaoyuan.lagou.com/" data-lg-tj-id="19xc" data-lg-tj-no="idnull"
+#                         data-lg-tj-cid="idnull" target="_blank" data-lg-tj-track-code="index_campus">2020春招<span
+#                             class="tips-new">new</span></a>
+#                 </li>
+#                 <li >
+#                     <a rel="nofollow" href="https://yanzhi.lagou.com/"
+#                         data-lg-tj-id="ic00" data-lg-tj-no="idnull" data-lg-tj-cid="idnull"
+#                         data-lg-tj-track-code="index_yanzhi">言职</a>
+#                 </li>
+#                 <li>
+#                     <a rel="nofollow" href="https://kaiwu.lagou.com/" data-lg-tj-id="1mua" data-lg-tj-no="idnull"
+#                         data-lg-tj-cid="idnull" data-lg-tj-track-code="index_kaiwu">课程</a>
+#                 </li>
+#             </ul>
+#         </div>
+# '''
+# def parse_text():# 解析字符串，自动补充
+#     htmlElement = etree.HTML(text)
+#     html = etree.tostring(htmlElement,encoding='utf-8').decode('utf-8')
+#     print(html)
+# def parse_lagoufile():# 解析文件，自动调整
+#     parser = etree.HTMLParser(encoding='utf-8') # 设置解析器
+#     htmlElement = etree.parse('文件名',parser=parser)
+#     html = etree.tostring(htmlElement,encoding='utf-8').decode('utf-8')
+#     print(html)
+# if __name__ == '__main__':
+#     parse_text()
+#     parse_lagoufile()

@@ -1,0 +1,103 @@
+# import json
+# json.dump(x,fp,ensure_ascii)             将x转换成json字符串，存入fp中，是否采用ascii编码
+# json.dumps()                              比上面少一个fp
+# json.loads(json_str)                     将json字符串转换为python数据类型
+# json.load(fp)                              读取json文件转换为python数据类型
+#
+# import csv
+# csv.reader(fp)                           用csv文件里读取数据，返回列表的迭代类型
+# csv.DictReader(fp)                       从csv文件里读取数据，返回字典的迭代类型
+# writer = csv.writer(fp)
+# writer.writerow(headers)                 写入表头
+# writer.writerows(vlues)                  写入值
+# writer = csv.DictWriter(fp,headers)
+# writer.writeheader()                     写入表头
+# writer.wrierows(values)                  写入值
+
+
+# import json
+# persons = [
+#     {
+#         'username':"zhiliao",
+#         'age':18,
+#         'country':"china"
+#     },
+#     {
+#         'username':"hello",
+#         'age':20,
+#         'country':"china"
+#     }
+# ]
+# json_str = json.dumps(persons)# 基本数据类型转换成json字符串
+# print(json_str)
+# with open("person.json",'w',encoding="utf-8") as fp:
+#     json.dump(persons,fp,ensure_ascii=False)# 将基本数据类型转换成json字符串并存入文件
+#     fp.close()
+#
+# persons = json.loads(json_str)# json字符串转换为基本数据类型
+# print(persons)
+# with open("person.json",'r',encoding="utf-8") as fp:
+#     persons = json.load(fp)# 从文件中读取json字符串，返回迭代类型
+#     for person in persons:
+#         print(person)
+#     fp.close()
+
+# import csv
+# # 读取csv文件
+# with open("stock.csv",'w',encoding="utf-8") as fp:
+#     reader = csv.reader(fp)# 从文件中读取csv，返回列表迭代类型（表头会作为迭代器第一个元素）
+#     next(reader)# 跳过表头
+#     for x in reader:
+#         print(x)
+#     fp.close()
+#
+# with open("stock.csv",'r',encoding="utf-8") as fp:
+#     resder = csv.DictReader(fp)# 从文件中读取csv，返回字典迭代类型(不包含表头）
+#     for x in reader:
+#         print(x)
+#     fp.close()
+
+# # 写入csv文件
+# headers = {'username','age','height'}
+# values =[
+#     ('张三',18,160),
+#     ('李四',19,170),
+#     ('王五',20,180)
+# ]
+# with open("classroom.csv",'w',encoding="utf-8",newline='') as fp:# 设置空行
+#     writer = csv.writer(fp)# 以元组形式输入
+#     writer.writerow(headers)
+#     writer.writerows(values)
+#
+# headers = {'username','age','height'}
+# values = [
+#     {'username':'zhangsan','age':18,'height':160},
+#     {'username':'lisi','age':19,'height':170},
+#     {'username':'wangwu','age':20,'height':180}
+#
+# ]
+# with open("classroom.csv",'w',encoding="utf-8",newline='') as fp:
+#     writer = csv.DictWriter(fp,headers)# 以字典形式输入
+#     writer.writeheader()
+#     writer.writerows(values)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
